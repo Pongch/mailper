@@ -1,1 +1,14 @@
-<h1>ADD A NEW EMAIL TEMPLATE</h1>
+<h2> A NEW EMAIL TEMPLATE LOL</h2>
+<%= form_for :email, url: emails_path do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

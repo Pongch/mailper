@@ -8,9 +8,9 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.new(email_params)
+    @email = Email.new(email_param)
 
-    if @book.save
+    if @email.save
       redirect_to :action => 'index'
     else
       @emails = Email.all
@@ -43,7 +43,7 @@ class EmailsController < ApplicationController
   end
 
 def email_param
-  params.require(:emails).permit(:title, :body)
+  params.require(:email).permit(:title, :body)
 end
 
 end

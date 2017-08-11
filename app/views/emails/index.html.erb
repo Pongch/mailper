@@ -1,1 +1,10 @@
 <h1>Hellow WORLD NIGGA</h1>
+<h3>Here are the list of all the emails template you can look at</h3>
+<% @emails.each do |email| %>
+  <h4>
+    <%= email.title %>
+  </h4>
+  <p>
+    <%= email.body %>
+  </p>
+<% end %>
