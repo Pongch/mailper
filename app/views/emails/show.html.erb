@@ -1,0 +1,8 @@
+<h1>This is a show page </h1>
+<strong>Email Title:</strong>
+<%= @email.title %>
+<strong>Email Body:</strong>
+<%= @email.body %>
+<%= link_to 'Back to emails', emails_path %>
+<%= link_to 'Edit this Email', edit_email_path %>
+<%= link_to 'Delete this Email', email_path, method: :delete %>

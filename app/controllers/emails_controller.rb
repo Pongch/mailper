@@ -1,4 +1,5 @@
 class EmailsController < ApplicationController
+
   def index
     @emails = Email.all
   end
@@ -37,7 +38,7 @@ class EmailsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     Email.find(params[:id]).destroy
     redirect_to :action => 'index'
   end

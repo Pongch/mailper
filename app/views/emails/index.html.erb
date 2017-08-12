@@ -1,4 +1,5 @@
-<h1>Hellow WORLD NIGGA</h1>
+<h1>Hellow WORLD Boiii</h1>
+<%= link_to 'ADD NEW EMAIL TEMPLATE', new_email_path %>
 <h3>Here are the list of all the emails template you can look at</h3>
 <% @emails.each do |email| %>
   <h4>
@@ -6,5 +7,10 @@
   </h4>
   <p>
     <%= email.body %>
+  </p>
+  <p>
+    <%= link_to 'Show', email_path(email) %>
+    <%= link_to 'Edit', edit_email_path(email) %>
+    <%= link_to 'Delete', email_path(email), method: :delete %>
   </p>
 <% end %>
