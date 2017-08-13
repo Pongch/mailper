@@ -1,7 +1,11 @@
 class EmailsController < ApplicationController
 
   def index
-    @emails = Email.all
+    @emails = if params[:term]
+      Email.where('title || body LIKE ?', "%#{params[:term]}%")
+    else
+      Email.all
+    end
   end
 
   def new
@@ -44,7 +48,7 @@ class EmailsController < ApplicationController
   end
 
 def email_param
-  params.require(:email).permit(:title, :body)
+  params.require(:email).permit(:title, :body, :term)
 end
 
 end

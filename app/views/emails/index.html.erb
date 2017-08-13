@@ -1,11 +1,17 @@
 <div class="container">
   <h1 class="top-header">Mailper</h1>
   <h2 class="text-center">Find email templates for all occasions</h2>
+  <div class="text-center">
+    <%= form_tag(emails_path, method: :get) do %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag "Find Now", class:"show-button" %>
+    <% end %>
+  </div>
   <%= link_to "ADD NEW", new_email_path %>
 </div>
 <div class="container">
   <p class="text-center">Here are the list of all the emails template you can look at, Happy emailing :)</p>
-  <% @emails.each do |email| %>
+  <% @emails.first(10).each do |email| %>
     <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
@@ -21,6 +27,7 @@
       <p>
         <%= link_to 'See Email', email_path(email), class: "show-button" %>
         <%= link_to 'Edit', edit_email_path(email), class: "show-button" %>
+        <%= link_to 'Copy Email!', email_path(email), class: "show-button" %>
         <%= link_to 'Delete', email_path(email), method: :delete, class: "show-button" %>
       </p>
   </div>

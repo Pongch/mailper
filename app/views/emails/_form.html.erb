@@ -1,7 +1,21 @@
 <%= form_for(@email) do |f| %>
-  <strong>Email Title</strong>
-  <%= f.text_field :title %>
-  <strong>Email Body</strong>
-  <%= f.text_field :body %>
-  <%= f.submit %>
+<div class="form-container">
+<div class="panel panel-default">
+  <div class="form-area">
+      <div class="form-group">
+        <p>
+          <strong>Email Title</strong>
+        </p>
+        <%= f.text_field :title, class: "form-control", rows: "5" %>
+      </div>
+      <div class="form-group form-group-lg">
+        <p>
+          <strong>Email Body</strong>
+        </p>
+        <%= f.text_area :body, class: "form-control input-lg", rows: "10" %>
+        <%= f.submit 'SUBMIT THIS TEMPLATE', class: "form-button" %>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>

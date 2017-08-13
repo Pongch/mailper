@@ -43,3 +43,44 @@ margin-top: 3em;
 .show-button a{
   color:black;
 }
+
+/*Form Style*/
+.form-button {
+border-style: solid;
+border-color:black;
+background-color:white;
+border-radius:0.2em;
+color:black;
+text-decoration:none;
+padding: 5px 10px 5px 10px;
+margin-top: 3em;
+display:block;
+width: 100%;
+font-size:20px;
+}
+
+.form-button:hover {
+  border-style: solid;
+  border-color:black;
+  background-color:black;
+  border-radius:0.2em;
+  color:white;
+  text-decoration:none;
+  padding: 5px 10px 5px 10px;
+  margin-top: 3em;
+  width: 100%;
+  font-size: 20px;
+}
+
+.body-form {
+height:500px;
+}
+
+.form-area {
+  margin: 3em 3em 3em 3em;
+}
+
+.form-container {
+  width:60%;
+  margin: 0 auto;
+}
