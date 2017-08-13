@@ -1,16 +1,29 @@
-<h1>Hellow WORLD Boiii</h1>
-<%= link_to 'ADD NEW EMAIL TEMPLATE', new_email_path %>
-<h3>Here are the list of all the emails template you can look at</h3>
-<% @emails.each do |email| %>
-  <h4>
-    <%= email.title %>
-  </h4>
-  <p>
-    <%= email.body %>
-  </p>
-  <p>
-    <%= link_to 'Show', email_path(email) %>
-    <%= link_to 'Edit', edit_email_path(email) %>
-    <%= link_to 'Delete', email_path(email), method: :delete %>
-  </p>
-<% end %>
+<div class="container">
+  <h1 class="top-header">Mailper</h1>
+  <h2 class="text-center">Find email templates for all occasions</h2>
+  <%= link_to "ADD NEW", new_email_path %>
+</div>
+<div class="container">
+  <p class="text-center">Here are the list of all the emails template you can look at, Happy emailing :)</p>
+  <% @emails.each do |email| %>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= email.title %>
+      </h3>
+  </div>
+  <div class="panel-body">
+      Tags: <p class="label label-info">Sample Tags</p>
+      <div class="index-body">
+        <%= truncate(simple_format(email.body), :length => 140, escape: false) %>
+        <p>...</p>
+      </div>
+      <p>
+        <%= link_to 'See Email', email_path(email), class: "show-button" %>
+        <%= link_to 'Edit', edit_email_path(email), class: "show-button" %>
+        <%= link_to 'Delete', email_path(email), method: :delete, class: "show-button" %>
+      </p>
+  </div>
+</div>
+  <% end %>
+</div>

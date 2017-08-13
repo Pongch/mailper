@@ -1,0 +1,45 @@
+
+/*Top Header*/
+
+h1.top-header{
+text-align: center;
+color:white;
+background:black;
+}
+
+/*Index page content*/
+
+.index-body{
+margin:2em 0em 3em 0em;
+font-size: 20px;
+}
+
+.panel.panel-default{
+margin-bottom:2.5em;
+}
+
+.show-button {
+border-style: solid;
+border-color:black;
+background-color:white;
+border-radius:0.2em;
+color:black;
+text-decoration:none;
+padding: 5px 10px 5px 10px;
+margin-top: 3em;
+}
+
+.show-button:hover {
+  border-style: solid;
+  border-color:black;
+  background-color:black;
+  border-radius:0.2em;
+  color:white;
+  text-decoration:none;
+  padding: 5px 10px 5px 10px;
+  margin-top: 3em;
+}
+
+.show-button a{
+  color:black;
+}
