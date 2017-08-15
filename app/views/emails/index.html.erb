@@ -24,9 +24,10 @@
         <%= truncate(simple_format(email.body), :length => 140, escape: false) %>
         <p>...</p>
       </div>
-        <%= link_to 'See Email', email_path(email), class: "show-button", remote: true %>
+        <%= link_to 'See Email', email, class: "show-button", remote: true %>
         <%= link_to 'Copy Email!', email_path(email), class: "show-button" %>
         <%= link_to 'Delete', email_path(email), method: :delete, class: "show-button" %>
+        <!-- Rendering email modal Partial -->
         <%= render 'layouts/modal' %>
     </div>
   </div>

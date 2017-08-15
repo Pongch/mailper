@@ -15,3 +15,10 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+
+//Jquery function the delete all opened modal in one click
+$(document).ready(function() {
+    $('#myModal button').on('click', function() {
+        $('.modal').modal('hide');
+    });
+});
