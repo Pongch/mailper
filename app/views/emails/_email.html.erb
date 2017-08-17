@@ -3,6 +3,10 @@
     <pre class="code">
       <%= simple_format(@email.body) %>
     </pre>
-    <input class="copy" type="button" value="copy">
+    <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Success! message sent successfully.
+        </div>
+    <input class="copy-button" type="button" value="copy">
 </div>
 <%= link_to 'Edit this Email', edit_email_path %>

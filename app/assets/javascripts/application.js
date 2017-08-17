@@ -24,15 +24,10 @@ $(document).ready(function() {
     });
 });
 
-// attach click event to copy buttons
-$(document).on("click", ".fw-code-copy-button", function(){
-    var source = $(this).closest(".fw-code-copy").next("code").text();
-    alert("copying: " + source);
-});
 
 // attack clipboard.js to copy buttons
 $(document).ready(function(){
-    var clipboard = new Clipboard('.copy', {
+    var clipboard = new Clipboard('.copy-button', {
         target: function(trigger) {
             return $(trigger).closest('.code-snippet').find('.code').get(0);
         }
