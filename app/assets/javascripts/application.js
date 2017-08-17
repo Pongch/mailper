@@ -15,10 +15,26 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+//= require clipboard
 
 //Jquery function the delete all opened modal in one click
 $(document).ready(function() {
     $('#myModal button').on('click', function() {
         $('.modal').modal('hide');
+    });
+});
+
+// attach click event to copy buttons
+$(document).on("click", ".fw-code-copy-button", function(){
+    var source = $(this).closest(".fw-code-copy").next("code").text();
+    alert("copying: " + source);
+});
+
+// attack clipboard.js to copy buttons
+$(document).ready(function(){
+    var clipboard = new Clipboard('.copy', {
+        target: function(trigger) {
+            return $(trigger).closest('.code-snippet').find('.code').get(0);
+        }
     });
 });

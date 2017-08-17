@@ -1,4 +1,8 @@
 <!-- Email body partial is rendered through modal partial -->
-<p><%= simple_format(@email.body) %></p>
-<%= link_to 'Back to emails', emails_path %>
+<div class="code-snippet">
+    <pre class="code">
+      <%= simple_format(@email.body) %>
+    </pre>
+    <input class="copy" type="button" value="copy">
+</div>
 <%= link_to 'Edit this Email', edit_email_path %>
