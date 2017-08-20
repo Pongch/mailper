@@ -4,9 +4,9 @@
   <%= @email.tag.name %>
 </h4>
 <div class="code-snippet">
-    <pre class="code">
+    <span class="code">
       <%= simple_format(@email.body) %>
-    </pre>
+    </span>
     <input class="copy-button" type="button" value="copy">
 </div>
 <%= link_to 'Edit this Email', edit_email_path %>
