@@ -1,4 +1,8 @@
 <!-- Email body partial is rendered through modal partial -->
+<p>Tag:</p>
+<h4>
+  <%= @email.tag.name %>
+</h4>
 <div class="code-snippet">
     <pre class="code">
       <%= simple_format(@email.body) %>

@@ -84,7 +84,7 @@ height:500px;
   width:60%;
   margin: 0 auto;
 }
-/*Testing clipboard.js trigger button*/
+/*Modal*/
 
 .copy-button {
 border-style: solid;
@@ -114,4 +114,11 @@ margin-top: 3em;
 
 .alert{
     display: none;
+}
+
+.modal-label {
+  border-style: solid;
+  border-color:black;
+  border-radius:0.2em;
+  color:black;
 }

@@ -1,4 +1,5 @@
 class EmailsController < ApplicationController
+
   def index
     @emails = if params[:term]
       Email.where('title || body LIKE ?', "%#{params[:term]}%")
@@ -26,7 +27,6 @@ class EmailsController < ApplicationController
 
   def show
     @email = Email.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.js #show.js.erb
