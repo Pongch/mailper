@@ -10,11 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811173716) do
+ActiveRecord::Schema.define(version: 20170820121310) do
 
   create_table "emails", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "tag_id"
+  end
+
+  create_table "join_tabe_tags_emails", force: :cascade do |t|
+    t.string "tag"
+    t.string "email"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

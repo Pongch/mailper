@@ -8,6 +8,9 @@
         </p>
         <%= f.text_field :title, class: "form-control", rows: "5" %>
       </div>
+      <div class="form-group">
+        <%= select_tag(:tag_id, options_for_select(@tags), :prompt => "Select a Tag") %>
+      </div>
       <div class="form-group form-group-lg">
         <p>
           <strong>Email Body</strong>

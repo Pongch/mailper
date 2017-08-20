@@ -1,5 +1,4 @@
 class EmailsController < ApplicationController
-
   def index
     @emails = if params[:term]
       Email.where('title || body LIKE ?', "%#{params[:term]}%")
@@ -10,10 +9,12 @@ class EmailsController < ApplicationController
 
   def new
     @email = Email.new
+    @tags = Tag.all.map{ |c| [c.name, c.id]}
   end
 
   def create
     @email = Email.new(email_param)
+    @email.tag_id = params[:tag_id]
 
     if @email.save
       redirect_to :action => 'index'
@@ -35,10 +36,12 @@ class EmailsController < ApplicationController
 
   def edit
     @email = Email.find(params[:id])
+    @tags = Tag.all.map{ |c| [c.name, c.id]}
   end
 
   def update
     @email = Email.find(params[:id])
+    @email.tag_id = params[:tag_id]
 
     if @email.update_attributes(email_param)
       redirect_to :action => 'show' , :id => @email
@@ -54,7 +57,7 @@ class EmailsController < ApplicationController
   end
 
 def email_param
-  params.require(:email).permit(:title, :body, :term)
+  params.require(:email).permit(:title, :body, :term, :tag_id)
 end
 
 end
