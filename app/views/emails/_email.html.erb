@@ -3,16 +3,16 @@
 <h4>
   <%= @email.tag.name %>
 </h4>
-<div class="code-snippet">
+<div id="code-snippet" class="code-snippet">
     <span class="code">
       <%= simple_format(@email.body) %>
     </span>
     <div class="container" style="display:none;" id="myAlert">
        <div class="alert alert-success alert-dismissable" id="myAlert2">
            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-           <p>Success! Email Copied to your Clipboard</p>
+           <p>Success! Email copied to Clipboard</p>
        </div>
     </div>
-    <button class="copy-button" type="button" onclick="alertBox()">Copy Email !</button>
+    <button class="copy-button" onclick="alertBox()">Copy Email !</button>
 </div>
 <%= link_to 'Edit this Email', edit_email_path %>

@@ -40,6 +40,17 @@ margin-top: 3em;
   margin-top: 3em;
 }
 
+.show-button:active {
+  border-style: solid;
+  border-color:black;
+  background-color:black;
+  border-radius:0.2em;
+  color:white;
+  text-decoration:none;
+  padding: 5px 10px 5px 10px;
+  margin-top: 3em;
+}
+
 .show-button a{
   color:black;
 }
@@ -95,6 +106,7 @@ color:black;
 text-decoration:none;
 padding: 5px 10px 5px 10px;
 margin-top: 3em;
+width:100%;
 }
 
 .copy-button:hover {
@@ -106,6 +118,19 @@ margin-top: 3em;
   text-decoration:none;
   padding: 5px 10px 5px 10px;
   margin-top: 3em;
+  width:100%;
+}
+
+.copy-button:active{
+  border-style: solid;
+  border-color:black;
+  background-color:black;
+  border-radius:0.2em;
+  color:white;
+  text-decoration:none;
+  padding: 5px 10px 5px 10px;
+  margin-top: 3em;
+  width:100%
 }
 
 .copy-button a{
@@ -121,4 +146,12 @@ margin-top: 3em;
   border-color:black;
   border-radius:0.2em;
   color:black;
+}
+
+button.close {
+  font-size:3em;
+}
+
+.modal-footer button.show-button {
+  float:left;
 }

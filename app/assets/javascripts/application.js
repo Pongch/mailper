@@ -17,12 +17,23 @@
 //= require bootstrap-sprockets
 //= require clipboard
 
-//Jquery function the delete all opened modal in one click
+
+//open only one modal at a time
+function openModal(){
+    $('#myModal').modal('show')
+}
+
+//Jquery function close all opened modal in one click
+
 $(document).ready(function() {
     $('#myModal button').on('click', function() {
         $('.modal').modal('hide');
     });
 });
+
+function closeModal() {
+  $('#myModal').modal('hide');
+}
 
 
 // attack clipboard.js to copy buttons
@@ -35,7 +46,7 @@ $(document).ready(function(){
     });
 });
 
-// Show Bootstrap Alert
+// Show prompt Success Alert
 function alertBox() {
   alert("You have copied the email!");
 };
