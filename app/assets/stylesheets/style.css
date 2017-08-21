@@ -112,8 +112,8 @@ margin-top: 3em;
   color:black;
 }
 
-.alert{
-    display: none;
+.alert.alert-success.alert-dismissable {
+  width:200px;
 }
 
 .modal-label {

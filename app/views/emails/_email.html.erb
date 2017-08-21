@@ -7,6 +7,12 @@
     <span class="code">
       <%= simple_format(@email.body) %>
     </span>
-    <input class="copy-button" type="button" value="copy">
+    <div class="container" style="display:none;" id="myAlert">
+       <div class="alert alert-success alert-dismissable" id="myAlert2">
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           <p>Success! Email Copied to your Clipboard</p>
+       </div>
+    </div>
+    <button class="copy-button" type="button" onclick="alertBox()">Copy Email !</button>
 </div>
 <%= link_to 'Edit this Email', edit_email_path %>

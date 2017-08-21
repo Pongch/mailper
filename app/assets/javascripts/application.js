@@ -30,6 +30,45 @@ $(document).ready(function(){
     var clipboard = new Clipboard('.copy-button', {
         target: function(trigger) {
             return $(trigger).closest('.code-snippet').find('.code').get(0);
+            prompt("Email successfully copied!");
         }
     });
 });
+
+// Show Bootstrap Alert
+function alertBox() {
+  alert("You have copied the email!");
+};
+
+
+
+//Tooltip feature after clicking copy button
+/*$('.copy-button').tooltip({
+  trigger: 'click',
+  placement: 'buttom'
+});
+
+function setTooltip(message) {
+  $('.copy-button').tooltip('hide')
+  .attr('data-original-title', message)
+  .tooltip('show');
+}
+
+ function hideTooltip(){
+   setTimeout(function(){
+     $('copy-button').tooltip('hide');
+   }, 1000)
+ }
+
+//clipboard tooltip on success& Failure alert
+var clipboard = new Clipboard('.copy-button');
+
+clipboard.on('success', function(e) {
+  setTooltip('Successfully Copied');
+  hideTooltip();
+});
+
+clipboard.on('error', function(e) {
+  setTooltip('Copying Failed :/ Please try again!');
+  hideTooltip();
+}) */
