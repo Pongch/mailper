@@ -35,6 +35,8 @@ function closeModal() {
   $('#myModal').modal('hide');
 }
 
+//Not allow user to close the modal by clicking outside the div
+$('#myModal').modal({backdrop: 'static', keyboard: 'false'});
 
 // attack clipboard.js to copy buttons
 $(document).ready(function(){
