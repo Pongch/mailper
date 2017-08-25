@@ -7,8 +7,26 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">MAILPER</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">SELECT EMAIL TYPE: <span class="glyphicon glyphicon-menu-down
+            " aria-hiddden="true"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Template Emails</a></li>
+              <li><a href="#">Template Emails</a></li>
+              <li><a href="#">Template Emails</a></li>
+              <li><a href="#">Template Emails</a></li>
+              <li><a href="#">Template Emails</a></li>
+              <li><a href="#">Template Emails</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
     <%= yield %>
   </body>
 </html>

@@ -1,10 +1,45 @@
 
+/*body*/
+body{
+  margin-top: 7em;
+}
+/*Navigation bar*/
+nav.navbar.navbar-default.navbar-fixed-top {
+  background-color: white;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.09);
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a{
+  color:black;
+}
+
+a.dropdown-toggle{
+  float:right;
+}
+
 /*Top Header*/
 
 h1.top-header{
 text-align: center;
 color:white;
 background:black;
+}
+
+input#term {
+  border-color:black;
+  height:2.3em;
+}
+
+.find-button {
+border-style: solid;
+border-color:black;
+background-color:white;
+border-radius:0.2em;
+color:black;
+text-decoration:none;
+padding: 5px 10px 5px 10px;
+margin-top: 3em;
 }
 
 /*Index page content*/
@@ -24,6 +59,7 @@ border-color:black;
 background-color:white;
 border-radius:0.2em;
 color:black;
+display:block;
 text-decoration:none;
 padding: 5px 10px 5px 10px;
 margin-top: 3em;
@@ -99,10 +135,10 @@ height:500px;
 
 .copy-button {
 border-style: solid;
-border-color:black;
-background-color:white;
+border-color:white;
+background-color:red;
 border-radius:0.2em;
-color:black;
+color:white;
 text-decoration:none;
 padding: 5px 10px 5px 10px;
 margin-top: 3em;
@@ -111,8 +147,8 @@ width:100%;
 
 .copy-button:hover {
   border-style: solid;
-  border-color:black;
-  background-color:black;
+  border-color:white;
+  background-color:#FE5031;
   border-radius:0.2em;
   color:white;
   text-decoration:none;
@@ -123,8 +159,8 @@ width:100%;
 
 .copy-button:active{
   border-style: solid;
-  border-color:black;
-  background-color:black;
+  border-color:white;
+  background-color:#FE5031;
   border-radius:0.2em;
   color:white;
   text-decoration:none;

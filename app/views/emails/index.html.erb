@@ -1,37 +1,40 @@
 <div class="container">
+  <div class="jumbotron">
   <h1 class="top-header">Mailper</h1>
   <h2 class="text-center">Find email templates for all occasions</h2>
   <div class="text-center">
-    <%= form_tag(emails_path, method: :get) do %>
-      <%= text_field_tag :term, params[:term] %>
-      <%= submit_tag "Find Now", class:"show-button" %>
-    <% end %>
+    <div class="controls">
+      <div class="entry form-group">
+        <%= form_tag(emails_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term] %>
+          <%= submit_tag "Find Now", class:"find-button" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <%= link_to "ADD NEW", new_email_path %>
+</div>
 </div>
 <div class="container">
-  <p class="text-center">Here are the list of all the emails template you can look at, Happy emailing :)</p>
   <% @emails.first(10).each do |email| %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        <%= email.title %>
-      </h3>
-    </div>
-    <div class="panel-body">
-      Tag:
-      <div class="label label-info">
-        <%= email.tag.name %>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= email.title %>
+        </h3>
       </div>
-      <div class="index-body">
-        <%= truncate(simple_format(email.body), :length => 140, escape: false) %>
-        <p>...</p>
+      <div class="panel-body">
+        Tag:
+        <div class="label label-default">
+          <%= email.tag.name %>
+        </div>
+        <div class="index-body">
+          <%= truncate(simple_format(email.body), :length => 140, escape: false) %>
+        </div>
+          <%= link_to 'VIEW EMAIL', email, class: "show-button", remote: true %>
+          <!-- Rendering email modal Partial -->
+          <%= render 'layouts/modal' %>
       </div>
-        <%= link_to 'See Email', email, class: "show-button", remote: true %>
-        <%= link_to 'Copy Email!', email_path(email), class: "show-button" %>
-        <%= link_to 'Delete', email_path(email), method: :delete, class: "show-button" %>
-        <!-- Rendering email modal Partial -->
-        <%= render 'layouts/modal' %>
     </div>
   </div>
   <% end %>
