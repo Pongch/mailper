@@ -7,12 +7,29 @@
       <div class="entry form-group">
         <%= form_tag(emails_path, method: :get) do %>
           <%= text_field_tag :term, params[:term] %>
-          <%= submit_tag "Find Now", class:"find-button" %>
+          <%= button_tag(type: "submit", class: "find-button") do %>
+            Find Now   <span class="glyphicon glyphicon-search" ></span>
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+</div>
+<div class="container">
+  <a href="#filter" data-toggle="collapse">
+    <div class="panel panel-default"><p id="filter-head" class="text-center">Filter by Email type: <span class="glyphicon glyphicon-menu-down" style="color:black;" aria-hidden="true"></span></p></div>
+  </a>
+  <div id="filter" class="collapse">
+    <div class="text-center">
+      <a href="#" class="filter-emails"> email type</a>
+      <a href="#" class="filter-emails"> email type</a>
+      <a href="#" class="filter-emails"> email type</a>
+      <a href="#" class="filter-emails"> email type</a>
+      <a href="#" class="filter-emails"> email type</a>
+      <a href="#" class="filter-emails"> email type</a>
+    </div>
+  </div>
 </div>
 <div class="container">
   <% @emails.first(10).each do |email| %>
