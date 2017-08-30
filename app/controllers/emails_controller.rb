@@ -6,6 +6,12 @@ class EmailsController < ApplicationController
     else
       Email.all
     end
+
+    @tags = if params[:tag]
+      Tag.where('name LIKE ?', "%#{params[:term]}%")
+    else
+      Tag.all
+    end
   end
 
   def new

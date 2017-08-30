@@ -11,28 +11,32 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 //= require jquery
+//= require jquery.turbolinks
+//= require turbolinks
 //= require bootstrap-sprockets
 //= require clipboard
 
 
 //open only one modal at a time
 function openModal(){
-    $('#myModal').modal('show')
+    $('#myModal').modal('toggle')
 }
 
 //Jquery function close all opened modal in one click
+//close function using turbolinks:load so app works after pages change
 
-$(document).ready(function() {
-    $('#myModal button').on('click', function() {
-        $('.modal').modal('hide');
+$(document).on('turbolinks:load', function() {
+    $('#myModal button').click(function() {
+        $('.modal').modal('toggle');
     });
 });
 
 function closeModal() {
-  $('#myModal').modal('hide');
+  $('#myModal button').click(function() {
+      $('.modal').modal('toggle');
+  });
 }
 
 //Not allow user to close the modal by clicking outside the div

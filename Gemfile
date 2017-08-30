@@ -16,6 +16,8 @@ gem 'haml'
 gem 'puma', '~> 3.7'
 # jquery
 gem 'jquery-rails'
+# Jquery turbolinks so Jquery function works after page load
+gem 'jquery-turbolinks'
 #Boot strap Sass gem
 gem 'bootstrap-sass'
 # Use SCSS for stylesheets
