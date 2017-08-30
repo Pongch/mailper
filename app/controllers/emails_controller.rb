@@ -7,10 +7,12 @@ class EmailsController < ApplicationController
       Email.all
     end
 
-    @tags = if params[:tag]
-      Tag.where('name LIKE ?', "%#{params[:term]}%")
+    #Seems like the search function above is not working because of the tags if statements, add them together?
+    if params[:tag].blank?
+      @emails = Email.all.order("created_at DESC")
     else
-      Tag.all
+      @tag_id = Tag.find_by(name: params[:tag]).id
+      @emails = Email.where(:tag_id => @tag_id)
     end
   end
 

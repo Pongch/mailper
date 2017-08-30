@@ -27,7 +27,7 @@ a.dropdown-toggle{
   margin: 2em 2em 5em 2em;
 }
 
-p.filter-emails {
+.filter-emails {
   display:inline-block;
   border-style: solid;
   border-color:black;

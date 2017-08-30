@@ -22,12 +22,9 @@
   </a>
   <div id="filter" class="collapse">
     <div class="text-center">
-      <p class="filter-emails"><a href="/emails?utf8=✓&term=Thanks&button=">Thanks test</a></p>
-      <p class="filter-emails"> email type</p>
-      <p class="filter-emails"> email type</p>
-      <p class="filter-emails"> email type</p>
-      <p class="filter-emails"> email type</p>
-      <p class="filter-emails"> email type</p>
+      <% Tag.all.each do |tag| %>
+        <%= link_to tag.name, emails_path(tag: tag.name), class: "filter-emails"%>
+      <% end %>
     </div>
   </div>
 </div>

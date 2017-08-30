@@ -16,9 +16,9 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">SELECT EMAIL TYPE: <span class="glyphicon glyphicon-menu-down
             " aria-hiddden="true"></span></a>
             <ul class="dropdown-menu">
-              <li>Template Emails</li>
-              <li>Template Emails</li>
-              <li>Template Emails</li>
+              <% Tag.all.each do |tag| %>
+                <li><%= link_to tag.name, emails_path(tag: tag.name)%></li>
+              <% end %>
             </ul>
         </li>
       </ul>
