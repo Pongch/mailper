@@ -1,15 +1,14 @@
 class EmailsController < ApplicationController
 
   def index
-    @emails = if params[:term]
-      Email.where('title || body LIKE ?', "%#{params[:term]}%")
-    else
-      Email.all
-    end
-
-    #Seems like the search function above is not working because of the tags if statements, add them together?
+    #tag params is used for selecting different tags on dropdown & filters,
+    #the term params is being used for the search form
     if params[:tag].blank?
-      @emails = Email.all.order("created_at DESC")
+      @emails = if params[:term]
+        Email.where('title || tag_id || body LIKE ?', "%#{params[:term]}%")
+      else
+        Email.all
+      end
     else
       @tag_id = Tag.find_by(name: params[:tag]).id
       @emails = Email.where(:tag_id => @tag_id)

@@ -43,7 +43,7 @@ function closeModal() {
 $('#myModal').modal({backdrop: 'static', keyboard: 'false'});
 
 // attack clipboard.js to copy buttons
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
     var clipboard = new Clipboard('.copy-button', {
         target: function(trigger) {
             return $(trigger).closest('.code-snippet').find('.code').get(0);
