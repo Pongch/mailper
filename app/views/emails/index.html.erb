@@ -1,6 +1,6 @@
 <div class="container">
   <div class="jumbotron">
-  <h1 class="top-header">Mailper</h1>
+  <h1 class="top-header">Mailper <span class="glyphicon glyphicon-envelope"></span></h1>
   <h2 class="text-center">Find email templates for all occasions</h2>
   <div class="text-center">
     <div class="controls">
@@ -19,7 +19,7 @@
 </div>
 <div class="container">
   <a href="#filter" data-toggle="collapse">
-    <div class="panel panel-default"><p id="filter-head" class="text-center">Filter by Email type: <span class="glyphicon glyphicon-menu-down" style="color:black;" aria-hidden="true"></span></p></div>
+    <div class="panel panel-default"><p id="filter-head" class="text-center"><span class="glyphicon glyphicon-tags"></span> Filter by Email type: <span class="glyphicon glyphicon-menu-down" style="color:black;" aria-hidden="true"></span></p></div>
   </a>
   <div id="filter" class="collapse">
     <div class="text-center">
@@ -39,7 +39,7 @@
         </h3>
       </div>
       <div class="panel-body">
-        Email type:
+        <span class="glyphicon glyphicon-tag"></span>
         <div class="label label-default">
           <%= email.tag.name %>
         </div>

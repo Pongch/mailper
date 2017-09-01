@@ -212,3 +212,14 @@ button.close {
 .modal-footer button.show-button {
   float:left;
 }
+
+/*icons*/
+
+span.glyphicon.glyphicon-tag,
+span.glyphicon.glyphicon-tags {
+  margin-right: 5px;
+}
+
+span.glyphicon.glyphicon-envelope{
+  color:white;
+}
